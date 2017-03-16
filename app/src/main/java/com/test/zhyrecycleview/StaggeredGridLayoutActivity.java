@@ -12,6 +12,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+* 瀑布流的实现是在 onBindViewHolder 里面 设置随机的高度实现的
+*/
 public class StaggeredGridLayoutActivity extends ActionBarActivity{
 
 	private RecyclerView mRecyclerView;
@@ -30,7 +33,7 @@ public class StaggeredGridLayoutActivity extends ActionBarActivity{
 
 		mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL));
 		mRecyclerView.setAdapter(mStaggeredHomeAdapter);
-		// 设置item动画 , DefaultItemAnimator
+		// 设置item动画 , DefaultItemAnimator ，默认的是白色的
 		mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
 		initEvent();

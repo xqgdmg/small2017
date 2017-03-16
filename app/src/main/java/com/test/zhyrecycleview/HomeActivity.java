@@ -17,6 +17,7 @@ import java.util.List;
 
 /**
  *  主要是通过 onOptionsItemSelected 来设置效果的
+ *  默认是瀑布流，但是没有实现随机的高度，所以和 GridView 没有区别
  * */
 public class HomeActivity extends ActionBarActivity{
 
@@ -38,7 +39,7 @@ public class HomeActivity extends ActionBarActivity{
 		mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(4,StaggeredGridLayoutManager.VERTICAL));
 		mRecyclerView.setAdapter(mAdapter);
 
-		 // 分割线
+		 // 分割线，自定义，修改<item name="android:listDivider">@drawable/divider_bg02</item> 默认值是 @null
 		mRecyclerView.addItemDecoration(new DividerGridItemDecoration(this));
 		// 设置item动画
 		mRecyclerView.setItemAnimator(new DefaultItemAnimator());

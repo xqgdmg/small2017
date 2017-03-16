@@ -11,7 +11,8 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
 /**
- * 自定义 ItemDecoration ，其实是系统的 Drawable
+ * 自定义 ItemDecoration ，其实是系统的 Drawable，默认居然也是空白的。。。
+ * 添加 <item name="android:listDivider">@drawable/divider_bg02</item> 可以修改为 shape 里的样式
  */
 public class DividerGridItemDecoration extends RecyclerView.ItemDecoration{
 

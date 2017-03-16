@@ -17,6 +17,7 @@ class StaggeredHomeAdapter extends RecyclerView.Adapter<StaggeredHomeAdapter.MyV
 	private List<String> mDatas;
 	private LayoutInflater mInflater;
 
+	 // 随机的布局高度
 	private List<Integer> mHeights;
 
 	public interface OnItemClickLitener{
@@ -43,16 +44,19 @@ class StaggeredHomeAdapter extends RecyclerView.Adapter<StaggeredHomeAdapter.MyV
 
 	@Override
 	public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
+		 // MyViewHolder 中需要构造方法中传入布局，用来找控件
 		MyViewHolder holder = new MyViewHolder(mInflater.inflate(R.layout.item_staggered_home, parent, false));
 		return holder;
 	}
 
 	@Override
 	public void onBindViewHolder(final MyViewHolder holder, final int position){
+
+		 // 中设置 LayoutParams
 		LayoutParams lp = holder.tv.getLayoutParams();
 		lp.height = mHeights.get(position);
-		
 		holder.tv.setLayoutParams(lp);
+
 		holder.tv.setText(mDatas.get(position));
 
 		// 如果设置了回调，则设置点击事件
