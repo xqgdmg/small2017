@@ -77,8 +77,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         long r = db.insert("user", null, cv);//执行插入操作
         db.close();
         Log.e("ABC", r + "");*/
-        String sql = "insert into user(username,password) values ('Jack Johnson" + position + "','isAPassword')";//插入操作的SQL语句
-        db.execSQL(sql);//执行SQL语句
+
+//        String sql = "insert into user(username,password) values ('Jack Johnson" + position + "','isAPassword')";//插入操作的SQL语句
+//        db.execSQL(sql);//执行SQL语句
+
+         // 标准写法, 变量通过加好的形式拼接有点搞不懂
+        db.execSQL("insert into user(username,password) values (?,?)",new String[]{"name","pwd"});
+//        db.execSQL("insert into user(username,password) values (?,?)",new String[]{"name" + position ,"pwd"});
     }
 
     private void delete(int position) {
@@ -97,6 +102,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
          // Jack Johnson" + position + "
         String sql = "delete from user where username='Jack Johnson" + position + "'";//删除操作的SQL语句，
         db.execSQL(sql);//执行删除操作
+
+//        String sql = "delete from user where username='Jack Johnson" + position + "'"; // = 换成 >
+//        db.execSQL("delete from user where username > ?",new String[]{"50"});  // 示例代码
     }
 
     private void update(int position) {
@@ -111,6 +119,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
          // passwordUpdated' where username='" + "username" + position + "
         String sql = "update user set password = 'passwordUpdated' where username='" + "Jack Johnson" + position + "'";//修改的SQL语句
         db.execSQL(sql);//执行修改
+
+//        db.execSQL("update user set password = ? where username = ?",new String[]{"password","username"}); // 示例代码
     }
 
     private void clear() {
@@ -131,7 +141,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 users.add(u);
             } while (c.moveToNext());
         }
+
+//        db.rawQuery("select * from user",null);  // 示例代码
+
         c.close();
         db.close();
     }
+
 }
