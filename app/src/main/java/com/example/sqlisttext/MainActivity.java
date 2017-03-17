@@ -147,7 +147,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        }
 
         Cursor c = db.rawQuery("select * from user", null);// 示例代码
-            if (c.moveToFirst()) {//判断游标是否为空
+//            if (c.moveToFirst()) {//判断游标是否为空
+            if (c.moveToNext()) {//判断游标是否为空
             do {//移动到指定记录
                 User u = new User();
                 u.setId(c.getLong(c.getColumnIndex("_id")));
