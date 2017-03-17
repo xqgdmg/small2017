@@ -1,6 +1,5 @@
 package com.example.sqlisttext;
 
-import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,11 +7,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatTextView;
 import android.text.method.ScrollingMovementMethod;
-import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayDeque;
 
+/*
+* android 和 sql
+*/
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private AppCompatTextView result;
     private DatabaseHelper databaseHelper;
@@ -106,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        db.execSQL(sql);//执行删除操作
 
 //        String sql = "delete from user where username='Jack Johnson" + position + "'"; // = 换成 >
-        db.execSQL("delete from user where username = ?",new String[]{"name" + position});  //
+        db.execSQL("delete from user where username = ?",new String[]{"name" + position});  // 大于 小于 等于
 //        db.execSQL("delete from user where username > ?",new String[]{"50"});  // 示例代码
     }
 
@@ -134,8 +135,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void query() {
         users.clear();
         db = databaseHelper.getReadableDatabase();
-        Cursor c = db.query("user", null, null, null, null, null, null);//查询并获得游标
-        if (c.moveToFirst()) {//判断游标是否为空
+//        Cursor c = db.query("user", null, null, null, null, null, null);//查询并获得游标
+//        if (c.moveToFirst()) {//判断游标是否为空
+//            do {//移动到指定记录
+//                User u = new User();
+//                u.setId(c.getLong(c.getColumnIndex("_id")));
+//                u.setUserName(c.getString(c.getColumnIndex("username")));
+//                u.setPassword(c.getString(c.getColumnIndex("password")));
+//                users.add(u);
+//            } while (c.moveToNext());
+//        }
+
+        Cursor c = db.rawQuery("select * from user", null);// 示例代码
+            if (c.moveToFirst()) {//判断游标是否为空
             do {//移动到指定记录
                 User u = new User();
                 u.setId(c.getLong(c.getColumnIndex("_id")));
@@ -144,8 +156,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 users.add(u);
             } while (c.moveToNext());
         }
-
-//        db.rawQuery("select * from user",null);  // 示例代码
 
         c.close();
         db.close();
