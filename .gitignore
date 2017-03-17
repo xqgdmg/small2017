@@ -30,4 +30,3 @@ proguard/
 
 **/build/
 .gradle
-.idea
