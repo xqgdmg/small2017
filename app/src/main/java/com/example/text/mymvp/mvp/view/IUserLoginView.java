@@ -4,6 +4,7 @@ import com.example.text.mymvp.bean.User;
 
 /**
  * Created by Chris on 2017/3/15.
+ * 主要是写逻辑
  */
 public interface IUserLoginView {
     String getUserName();

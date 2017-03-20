@@ -14,7 +14,8 @@
             android:text="name"/>
         <EditText
             android:id="@+id/id_et_username"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:hint="input name"/>
     </LinearLayout>
@@ -29,7 +30,8 @@
             android:text="pwd"/>
         <EditText
             android:id="@+id/id_et_password"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:hint="input pwd"/>
     </LinearLayout>
@@ -40,12 +42,14 @@
         android:orientation="horizontal">
         <Button
             android:id="@+id/id_btn_login"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="login"/>
         <Button
             android:id="@+id/id_btn_clear"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:hint="clear"/>
     </LinearLayout>
