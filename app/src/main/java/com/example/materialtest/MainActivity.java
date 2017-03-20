@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "youClickSnackbar", Snackbar.LENGTH_SHORT)
+                Snackbar.make(view, "message", Snackbar.LENGTH_SHORT)
                         .setAction("clickHere", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
