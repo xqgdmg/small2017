@@ -17,6 +17,7 @@ import java.util.List;
 /**
  * Created by baiyuliang on 2016-5-27.
  * 图片 adapter 小的 里面嵌套的
+ * 动态设置ImageView的宽高 是亮点
  */
 public class ImageAdapter extends BaseAdapter<ImageAdapter.MyViewHolder> {
 
