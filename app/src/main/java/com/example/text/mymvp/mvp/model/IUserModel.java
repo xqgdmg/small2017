@@ -4,7 +4,7 @@ import com.example.text.mymvp.mvp.model.listener.OnLoginListener;
 
 /**
  * Created by Chris on 2017/3/15.
- * Model层 通过 OnLoginListener 回调给外界信息
+ * Model层 接口同样是实现逻辑而已
  */
 public interface IUserModel {
 

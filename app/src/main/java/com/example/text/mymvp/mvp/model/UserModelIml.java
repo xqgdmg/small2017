@@ -5,7 +5,7 @@ import com.example.text.mymvp.mvp.model.listener.OnLoginListener;
 
 /**
  * Created by Chris on 2017/3/15.
- * Model 通过方法中的 回调，给外界返回信息
+ * Model实现类 通过方法中的 回调，给外界返回信息
  */
 public class UserModelIml implements IUserModel {
     @Override

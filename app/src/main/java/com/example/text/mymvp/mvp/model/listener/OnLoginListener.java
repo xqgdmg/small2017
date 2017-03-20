@@ -4,7 +4,7 @@ import com.example.text.mymvp.bean.User;
 
 /**
  * Created by Chris on 2017/3/15.
- * 回调属于 Model层 中的部分，
+ * 回调属于 Model层 中的部分用于外界当做参数传入，接收数据
  */
 public interface OnLoginListener {
 
