@@ -42,7 +42,7 @@ public class ImageAdapter extends BaseAdapter<ImageAdapter.MyViewHolder> {
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         super.onBindViewHolder(holder, position);
         String url = (String) listDatas.get(position);//转换
-        Glide.with(context).load(url).into(holder.iv);
+        Glide.with(context).load(url).placeholder(R.mipmap.ic_launcher).into(holder.iv); // .crossFade() 图片的淡入淡出动画效果
     }
 
     @Override

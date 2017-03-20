@@ -34,6 +34,7 @@ public class InfoAdapter extends BaseAdapter<InfoAdapter.MyViewHolder> {
         InfoBean infoBean = (InfoBean) listDatas.get(position);//转换
         holder.tv.setText(infoBean.getText());//填充数据
 
+         // 图片九宫格显示
         if(infoBean.getImgList()!=null&&infoBean.getImgList().size()>0){
             ImageAdapter imageAdapter = new ImageAdapter(context, infoBean.getImgList());
             holder.rv_grid.setLayoutManager(new GridLayoutManager(context,3));
