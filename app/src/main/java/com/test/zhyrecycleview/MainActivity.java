@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.test.nesting.NestingActivity;
+
 /**
  *  只是用来过度，没有什么用
  * */
@@ -16,8 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btn1 = (Button) findViewById(R.id.btn1);
-
+        Button btn1 = (Button) findViewById(R.id.btn1_HomeActivity);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,12 +27,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        Button btn2 = (Button) findViewById(R.id.btn2);
-
+        Button btn2 = (Button) findViewById(R.id.btn2_StaggeredGridLayoutActivity);
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,StaggeredGridLayoutActivity.class));
+            }
+        });
+
+         // 嵌套
+        Button btn3 = (Button) findViewById(R.id.btn3_Nesting);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,NestingActivity.class));
             }
         });
     }

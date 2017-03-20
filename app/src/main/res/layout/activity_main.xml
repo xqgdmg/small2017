@@ -7,14 +7,20 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/btn1"
+        android:id="@+id/btn1_HomeActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="gotoHomeActivity" />
+        android:text="HomeActivity" />
 
     <Button
-        android:id="@+id/btn2"
+        android:id="@+id/btn2_StaggeredGridLayoutActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="gotoStaggeredGridLayoutActivity" />
+        android:text="StaggeredGridLayoutActivity" />
+
+    <Button
+        android:id="@+id/btn3_Nesting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NestRecycleView" />
 </LinearLayout>

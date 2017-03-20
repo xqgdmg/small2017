@@ -5,4 +5,8 @@
     <color name="colorAccent">#FF4081</color>
     <color name="color_item_press">#ffff0000</color>
     <color name="color_item_normal">#44ff0000</color>
+
+    <!-- item 选择器 -->
+    <color name="itempress">#E0E0E0</color>
+    <color name="white">#FFFFFF</color>
 </resources>
